@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 # Create your views here.
 
-def my_bookings(request):
-    return HttpResponse("Hello")
+class Index(TemplateView):
+    template_name = 'bookings/index.html'
+
+
