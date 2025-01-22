@@ -90,3 +90,8 @@ footer a:hover {
     height: 2rem;
     margin: 1rem;
 }
+
+.avtive {
+    border-bottom: 2px solid var(--green);
+    font-weight: 450;
+}

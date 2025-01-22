@@ -21,7 +21,7 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('bookings.urls')),
     path("accounts/", include("allauth.urls")),
-    path('djrichtextfield/', include('djrichtextfield.urls')),
+    # path('djrichtextfield/', include('djrichtextfield.urls')),
     path('admin/', admin.site.urls),
     
 ]
