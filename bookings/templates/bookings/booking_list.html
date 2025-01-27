@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Your Bookings</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.item_name }}</td>
+            <td>{{ booking.check_in }}</td>
+            <td>{{ booking.check_out }}</td>
+            <td>{{ booking.total_price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'create_booking' %}">Create a New Booking</a>
+{% endblock %}

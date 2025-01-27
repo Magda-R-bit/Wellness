@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Booking Details</h2>
+<p><strong>Item:</strong> {{ booking.item_name }}</p>
+<p><strong>Check-in:</strong> {{ booking.check_in }}</p>
+<p><strong>Check-out:</strong>{{ booking.check_out }}</p>
+<p><strong>Total Price</strong> ${{ booking.total_price }}</p>
+<a href="{% url 'booking_list' %}">Back to Your </a>
+{% endblock %}
