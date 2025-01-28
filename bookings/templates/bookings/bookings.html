@@ -18,6 +18,9 @@
             <td>{{ booking.check_in }}</td>
             <td>{{ booking.check_out }}</td>
             <td>{{ booking.total_price }}</td>
+            <td>
+                <a href="{% url 'booking_detail' booking.pk %}">Details</a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
