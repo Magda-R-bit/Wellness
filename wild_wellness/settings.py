@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-magdarbit-wildwellness-4yfgoso2evm.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = ['127.0.0.1',
                  'wild-wellness-04ca50be4b34.herokuapp.com',
 ]
 
@@ -125,22 +125,14 @@ AUTHENTICATION_BACKENDS = [
 WSGI_APPLICATION = 'wild_wellness.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
-if 'DATABASE_URL' in os.environ:
-    DATABASES['default'] = dj_database_url.parse(os.environ['DATABASE_URL'])
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeinstitute-ide.net/",
+    "https://localhost",
     "https://*.herokuapp.com"
 ]
 
